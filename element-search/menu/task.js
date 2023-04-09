@@ -5,6 +5,10 @@ for (let i = 0; i < menuLink.length; i++) {
         let menuItem = menuLink[i].closest(".menu__item");
         let menuSub = menuItem.querySelector(".menu_sub");
         if (menuSub) {
+            if (menuSub.classList.contains('menu_active')) {
+                closeMenu();
+                return false;
+            } 
             closeMenu();
             menuSub.classList.add("menu_active");
             return false;

@@ -1,9 +1,10 @@
 let sliders = Array.from(document.getElementsByClassName("slider__item"));
 let right = document.querySelector(".slider__arrow_next");
 let left = document.querySelector(".slider__arrow_prev");
-let currentSlide = 0;
+
 
 right.onclick = () => {
+    let currentSlide = sliders.findIndex((sliderIndex) => sliderIndex == document.querySelector('.slider__item_active'))
     sliders[currentSlide].className = "slider__item";
     currentSlide++;
     if (currentSlide >= sliders.length) {
@@ -13,6 +14,7 @@ right.onclick = () => {
 };
 
 left.onclick = () => {
+    let currentSlide = sliders.findIndex((sliderIndex) => sliderIndex == document.querySelector('.slider__item_active'))
     sliders[currentSlide].className = "slider__item";
     currentSlide--;
     if (currentSlide < 0) {
